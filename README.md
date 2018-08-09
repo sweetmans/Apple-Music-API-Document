@@ -21,10 +21,11 @@ The Apple Music API balances usefulness with processing time and bandwidth usage
 
 #### Before you do anything you should have developer token & user token.
 
-##### Generate Developer jwt token see:
-[Creating Token From Apple!] (https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens)
+##### Generate Developer JWT see:
+[Creating Token From Apple](https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens)
 
-https://github.com/pelauimagineering/apple-music-token-generator
+[Developer Token Generator](https://github.com/pelauimagineering/apple-music-token-generator)
+
 
 ##### Request a user token within your app just use:
 
@@ -37,5 +38,50 @@ import StoreKit
 requestUserToken(forDeveloperToken:completionHandler:)
 ```
 
+### Handling Requests and Responses
+
+> After adding the developer token and music user token to the header, you're ready to compose your request to get data from the API.
+
+Compose a Request
+Apple Music API requests have common components. To compose a request, first specify the root path, ```https://api.music.apple.com/v1/```.
+
+Follow this part of the path with either the catalog/ or library/ path parameter. The catalog path references the entire Apple Music library. The library path references your personal music library.
+
+Follow this path with path parameters specific to the endpoint. For example, to request a genre, use this request:
+```json
+GET https://api.music.apple.com/v1/catalog/{storefront}/genres/{id}
+```
+
+Notice that the storefront is specified in the path for the genre request above. For an Apple Music catalog request, you explicitly include the storefront as part of your path. For personalized requests, the storefront is set implicitly by the user’s information and isn't part of the URL. For example, to get an album rating for a user, you use this request:
+```json
+GET https://api.music.apple.com/v1/me/ratings/albums/{id}
+```
+
+Notice the {id} part of the path. Every resource has a unique catalog identifier, but only resources added to your library have unique library identifiers. The catalog identifier for a particular resource is different from a library identifier for that same resource. After a resource has been removed from a library, its library identifier is deleted. A new one is generated if that resource is added back to that library.
+
+For more about storefronts, see Using Storefronts and Localizations. Optionally, you can also customize requests so that you get the resources and related content needed for your app with a single request. To learn more about these features, see Handling Relationships and Pagination.
+
+##### Handle a Response
+The core document object that appears in a response is the ResponseRoot object. This object contains different arrays and groups of Resource objects, which contain the information requested about the artist, album, song, and so on.
+
+If a request is successful, the HTTP status code in the response is in the 200 range. The body of the response contains either the requested array of resource objects in the data array or the result of the request as a map called results, where resource types are the members and the corresponding values are groups of resource objects. For example, if you fetch resources by type, the resource objects are contained in the data array of the ResponseRoot object. (For the common resource members, see Resource object and Relationship object.) If you successfully modify or delete resources, the status code is 204 and the body is empty.
+
+If the status code indicates an error, the response may contain information in the errors array about one or more errors that occurred. The status code indicates the primary error, but you should examine the contents of the errors member of the Root object for details about individual errors. (See Error and HTTP Status Codes.)
+
+##### For example:
+
+If the request is for an existing single resource object, the status code is 200 (OK) and the data array contains the requested resource object.
+
+If the request is for a single resource object that doesn’t exist, the status code is 404 (Not Found) and the response doesn’t contain a data array.
+
+If the request is for multiple resource objects by ID, the status code is 200 (OK) and the data array includes the existing resource objects.
+
+If the request is for multiple resource objects by ID and none of the resources exist, the status code is 200 (OK) and the data array is empty.
+
+If you make a successful request to an endpoint that returns results, the status code is 200 (OK) and the response includes the results object.
+
+If the request isn’t supported as specified, the status code is 400 (Bad Request) and the errors array contains an error object for any identified problem.
+
+If errors are encountered when the request is processed, the status code is in the 500 range and the errors array contains error objects for the errors that occurred.
 
 

@@ -30,14 +30,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="495" />
+          <entry key="md" value="630" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="495" />
+          <entry key="Markdown" value="630" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.php.new.test" />
+      <usages-collector id="statistics.php.composer.actions" />
+      <usages-collector id="statistics.php.rename.constructor" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.php.new.class" />
+      <usages-collector id="statistics.php.composer.command.options" />
     </session>
   </component>
   <component name="FileEditorManager">
@@ -46,8 +54,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="46">
-                <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
+              <first_editor relative-caret-position="221">
+                <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -78,6 +86,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2048" />
@@ -134,12 +145,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533797287724</updated>
-      <workItem from="1533797292629" duration="828000" />
+      <workItem from="1533797292629" duration="1413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="828000" />
+    <option name="totallyTimeSpent" value="1413000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2048" height="1152" extended-state="0" />
@@ -186,8 +197,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="46">
-            <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
+          <first_editor relative-caret-position="221">
+            <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>
