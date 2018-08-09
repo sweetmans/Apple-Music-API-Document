@@ -48,7 +48,7 @@ Apple Music API requests have common components. To compose a request, first spe
 Follow this part of the path with either the catalog/ or library/ path parameter. The catalog path references the entire Apple Music library. The library path references your personal music library.
 
 Follow this path with path parameters specific to the endpoint. For example, to request a genre, use this request:
-```URL
+```javascript
 GET https://api.music.apple.com/v1/catalog/{storefront}/genres/{id}
 ```
 
@@ -84,4 +84,141 @@ If the request isn’t supported as specified, the status code is 400 (Bad Reque
 
 If errors are encountered when the request is processed, the status code is in the 500 range and the errors array contains error objects for the errors that occurred.
 
+#### Using Storefronts and Localizations
+> In Apple Music catalog requests, you specify the storefront in the path, and you can optionally specify a localization. A storefront is a country-specific geographical region. A localization is the translation of content into a language that also adapts to a region and culture. Each storefront supports a specific set of localizations.
 
+Specify a Storefront
+To get data specific to a territory, such as top charts in Mexico or content specifically licensed to the United Kingdom, specify a storefront. To get the possible storefront values, fetch all storefronts:
+
+```javascript
+GET https://api.music.apple.com/v1/storefronts
+```
+Choose the storefront you want to use, and pass the Storefront object’s id attribute as the storefront path parameter in subsequent requests. For example, use au as the storefront for Australia.
+
+```json
+{ 
+    "attributes":{ 
+        "defaultLanguageTag":"en-AU",
+        "name":"Australia",
+        "supportedLanguageTags":[ 
+            "en-AU"
+        ]
+    },
+    "href":"/v1/storefronts/au",
+    "id":"au",
+    "type":"storefronts"
+}
+```
+##### Specify a Localization
+If you don't explicitly specify a localization for a storefront, or if the localization you specify isn't supported, the default for the territory is used. To request a localization other than the default, use the l query parameter:
+```javascript
+GET https://api.music.apple.com/v1/catalog/us/albums/310730204?l=es-MX
+```
+
+The value of the query parameter must be a supported localization (included in the supportedLanguageTags array). It’s unnecessary and not recommended to pass the storefront’s default localization, specified by the defaultLanguageTag attribute. For example, the United States (US) storefront’s default localization is American English (en-US) and is used if no localization is specified. However, you can specify Mexican Spanish (es-MX) as the localization.
+```json
+{
+    "attributes":{
+        "defaultLanguageTag":"en-US",
+        "name":"United States",
+        "supportedLanguageTags":[
+            "en-US",
+            "es-MX"
+        ]
+    },
+    "href":"/v1/storefronts/us",
+    "id":"us",
+    "type":"storefronts"
+}
+
+```
+
+####
+Handling Relationships and Pagination
+> You can fetch the resources and related objects your app needs in a single request. To get related objects, you fetch specific relationships along with the resource objects. If the query results contain too many objects, you can use pagination to fetch the next set of objects.
+
+#####Fetch Resource Relationships
+To reduce response sizes and improve performance, not all available relationships of a resource object—such as an album, song, playlist, or music video—are included by default. You can include additional related resources in the response by using the include query parameter.
+
+There are three possible default behaviors for fetching resources in relationships:
+
+The resources are included, with their attributes, as secondary resource objects.
+
+The resources are included, without their attributes, as resource identifiers only.
+
+The relationship is omitted from the response entirely and must be explicitly included.
+
+> For example, these Album relationships have different default behaviors:
+
+The tracks relationship includes the resource objects for the album’s songs and music videos, which are typically essential for working with albums.
+
+The artists relationship only includes resource identifiers for the artist or artists associated with the album and excludes the attributes member in each resource object. This relationship allows you to easily link to an artist from an album, although some artist attributes are also attributes of the album.
+
+The genres relationship is omitted by default. This relationship is seldom used, and the names of the genres already appear as an attribute of the album, genreNames.
+
+See the corresponding object model reference for the default behavior of other objects.
+
+Use the include parameter to include the resource objects for one or more available relationships in the response. The value of the include parameter is a comma-separated list of the relationship names. Relationships that include resource objects by default don’t have to be specified in the list; they’ll continue to be included along with the specified relationships. For example, when fetching an Artist object, you can request that the playlists objects be included:
+```javascript
+GET https://api.music.apple.com/v1/catalog/us/artists/462006?include=playlists
+```
+
+To fetch a relationship exclusively, specify the name of the relationship after the id path parameter. For example, fetch just the tracks belonging to an album:
+```javascript
+GET https://api.music.apple.com/v1/catalog/us/albums/310730204/tracks
+```
+
+Not all objects in a relationship are fetched by default. See the corresponding object model reference for the default fetch limits. To specify the number of objects fetched, use the limit resource parameter. For example, you can fetch an artist's first five albums:
+```javascript
+GET https://api.music.apple.com/v1/catalog/us/artists/462006/albums?limit=5
+```
+
+##### Fetch Resources by Page
+Some GET requests support pagination of the objects or an object’s relationships. If you specify a limit parameter, the number of resources returned is restricted to that limit. If no limit is supplied, the default limit is used. If you reach the limit to the number of resource objects in a response, the response contains a subset of the resource objects matching your criteria, and more requests are needed to get the rest of the objects.
+
+See the corresponding resource’s object model for the default fetch limit. If there are more resource objects than permitted by the fetch limit, the ResponseRoot object contains a next member whose value is a subpath you use in the next request. The subpath contains the offset parameter that specifies the next page. Similarly, a Relationship object may contain a next member that you use to fetch more objects in a relationship.
+
+For example, fetch all objects of a resource type, but specify the amount in the response by using the limit parameter:
+```javascript
+GET https://api.music.apple.com/v1/storefronts?limit=2
+```
+
+If there are more objects to fetch, the response contains a next member:
+```json
+{
+    "data":[
+        {
+            "attributes":{
+                "defaultLanguageTag":"en-gb",
+                "name":"Anguilla",
+                "supportedLanguageTags":[
+                    "en-gb"
+                ]
+            },
+            "href":"/v1/storefronts/ai",
+            "id":"ai",
+            "type":"storefronts"
+        },
+        {
+            "attributes":{
+                "defaultLanguageTag":"en-gb",
+                "name":"Antigua and Barbuda",
+                "supportedLanguageTags":[
+                    "en-gb"
+                ]
+            },
+            "href":"/v1/storefronts/ag",
+            "id":"ag",
+            "type":"storefronts"
+        }
+    ],
+    "next":"/v1/storefronts?offset=2"
+}
+```
+
+Pass the next subpath, and optionally, the limit parameter again, in the next request:
+```javascript
+GET https://api.music.apple.com/v1/storefronts?offset=2&limit=2
+```
+
+Continue requesting the resource objects until the next member no longer appears in the response.
