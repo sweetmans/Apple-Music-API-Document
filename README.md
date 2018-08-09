@@ -241,12 +241,12 @@ GET https://api.music.apple.com/v1/storefronts/{id}
 ### Response Codes
 code:`200` | **OK**
 ------------ | -------------
-Storefront | The request was successful.
-Response Type | ```Content-Type: application/json```
+Object | `Storefront`
+Response Type | `Content-Type: application/json`
 
 ### Response
 ```javascript
-https://api.music.apple.com/v1/storefronts/jp
+GET https://api.music.apple.com/v1/storefronts/jp
 ```
 
 ```json
