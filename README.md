@@ -48,7 +48,7 @@ Apple Music API requests have common components. To compose a request, first spe
 Follow this part of the path with either the catalog/ or library/ path parameter. The catalog path references the entire Apple Music library. The library path references your personal music library.
 
 Follow this path with path parameters specific to the endpoint. For example, to request a genre, use this request:
-```javascript
+```URL
 GET https://api.music.apple.com/v1/catalog/{storefront}/genres/{id}
 ```
 
