@@ -8,29 +8,26 @@
 
 ### API Lists
 
-##### Fetch Storefronts
+#### Fetch Storefronts
 - [ ] [**Get a store front**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get multiple storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get all storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get a user's storefront**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-
-##### Fetch Resources
+#### Fetch Resources
 - [ ] [**Catalog Resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Library Resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-
-##### Fetch Charts
+#### Fetch Charts
 - [ ] [**Get catalog charts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-
-##### Fetch Genres
+#### Fetch Genres
 - [ ] [**Get a catalog genre**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get multiple catalog genres**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get catalog top charts genres**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-
-##### Search the Catalog
+#### Search the Catalog
 - [ ] [**Search for catalog resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get catalog search hints**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 
-### Overview
+
+# Apple Music API Overview
 The Apple Music API is the web services portion of MusicKit. Using the Apple Music API, you can access information about media—such as albums, songs, artists, and playlists—in the Apple Music catalog and in a user’s personal cloud library. If authorized by a user, you can also access or modify data associated with that user. For example, you can find music recommendations for the user or change their rating of a particular song, both in the catalog and in their library.
 
 Requests to the Apple Music API are sent securely using HTTPS commands. All requests to the Apple Music API are associated with your app or website. A request includes a developer token that authenticates you as a trusted developer and member of the Apple Developer Program. Requests that access information for a specific user must also include a music user token that authorizes you to access that user’s information. See Getting Keys and Creating Tokens.
@@ -43,15 +40,15 @@ With localization, responses are automatically localized in an appropriate langu
 
 The Apple Music API balances usefulness with processing time and bandwidth usage. By default, it might not provide all of the information in a single response. For example, when returning a resource that has relationships with other resources, some or all of the information about those relationships might be omitted. Similarly, if a request results in a large number of objects, Apple Music might return a subset of those objects in the initial response and ask you to make subsequent requests to get the rest of the data. If your app has specific needs, you can modify your request so that more information is returned in a single response. See Handling Relationships and Pagination.
 
-#### Before you do anything you should have developer token & user token.
+## Before you do anything you should have developer token & user token.
 
-##### Generate Developer JWT see:
+### Generate Developer JWT see:
 [Creating Token From Apple](https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens)
 
 [Developer Token Generator](https://github.com/pelauimagineering/apple-music-token-generator)
 
 
-##### Request a user token within your app just use:
+### Request a user token within your app just use:
 
 
 ```swift
@@ -62,7 +59,7 @@ import StoreKit
 requestUserToken(forDeveloperToken:completionHandler:)
 ```
 
-### Handling Requests and Responses
+## Handling Requests and Responses
 
 > After adding the developer token and music user token to the header, you're ready to compose your request to get data from the API.
 
@@ -85,14 +82,14 @@ Notice the {id} part of the path. Every resource has a unique catalog identifier
 
 For more about storefronts, see Using Storefronts and Localizations. Optionally, you can also customize requests so that you get the resources and related content needed for your app with a single request. To learn more about these features, see Handling Relationships and Pagination.
 
-##### Handle a Response
+### Handle a Response
 The core document object that appears in a response is the ResponseRoot object. This object contains different arrays and groups of Resource objects, which contain the information requested about the artist, album, song, and so on.
 
 If a request is successful, the HTTP status code in the response is in the 200 range. The body of the response contains either the requested array of resource objects in the data array or the result of the request as a map called results, where resource types are the members and the corresponding values are groups of resource objects. For example, if you fetch resources by type, the resource objects are contained in the data array of the ResponseRoot object. (For the common resource members, see Resource object and Relationship object.) If you successfully modify or delete resources, the status code is 204 and the body is empty.
 
 If the status code indicates an error, the response may contain information in the errors array about one or more errors that occurred. The status code indicates the primary error, but you should examine the contents of the errors member of the Root object for details about individual errors. (See Error and HTTP Status Codes.)
 
-##### For example:
+### For example:
 
 If the request is for an existing single resource object, the status code is 200 (OK) and the data array contains the requested resource object.
 
@@ -108,7 +105,7 @@ If the request isn’t supported as specified, the status code is 400 (Bad Reque
 
 If errors are encountered when the request is processed, the status code is in the 500 range and the errors array contains error objects for the errors that occurred.
 
-#### Using Storefronts and Localizations
+## Using Storefronts and Localizations
 > In Apple Music catalog requests, you specify the storefront in the path, and you can optionally specify a localization. A storefront is a country-specific geographical region. A localization is the translation of content into a language that also adapts to a region and culture. Each storefront supports a specific set of localizations.
 
 Specify a Storefront
@@ -133,7 +130,7 @@ Choose the storefront you want to use, and pass the Storefront object’s id att
     "type":"storefronts"
 }
 ```
-##### Specify a Localization
+### Specify a Localization
 If you don't explicitly specify a localization for a storefront, or if the localization you specify isn't supported, the default for the territory is used. To request a localization other than the default, use the l query parameter:
 ```javascript
 GET https://api.music.apple.com/v1/catalog/us/albums/310730204?l=es-MX
@@ -157,11 +154,11 @@ The value of the query parameter must be a supported localization (included in t
 
 ```
 
-####
+###
 Handling Relationships and Pagination
 > You can fetch the resources and related objects your app needs in a single request. To get related objects, you fetch specific relationships along with the resource objects. If the query results contain too many objects, you can use pagination to fetch the next set of objects.
 
-##### Fetch Resource Relationships
+#### Fetch Resource Relationships
 To reduce response sizes and improve performance, not all available relationships of a resource object—such as an album, song, playlist, or music video—are included by default. You can include additional related resources in the response by using the include query parameter.
 
 There are three possible default behaviors for fetching resources in relationships:
@@ -197,7 +194,7 @@ Not all objects in a relationship are fetched by default. See the corresponding 
 GET https://api.music.apple.com/v1/catalog/us/artists/462006/albums?limit=5
 ```
 
-##### Fetch Resources by Page
+### Fetch Resources by Page
 Some GET requests support pagination of the objects or an object’s relationships. If you specify a limit parameter, the number of resources returned is restricted to that limit. If no limit is supplied, the default limit is used. If you reach the limit to the number of resource objects in a response, the response contains a subset of the resource objects matching your criteria, and more requests are needed to get the rest of the objects.
 
 See the corresponding resource’s object model for the default fetch limit. If there are more resource objects than permitted by the fetch limit, the ResponseRoot object contains a next member whose value is a subpath you use in the next request. The subpath contains the offset parameter that specifies the next page. Similarly, a Relationship object may contain a next member that you use to fetch more objects in a relationship.
