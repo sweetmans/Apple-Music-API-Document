@@ -6,6 +6,9 @@
 
 > From https://developer.apple.com
 
+### API Lists
+- [ ] [Get a store front](#get-a-storefront)
+
 ### Overview
 The Apple Music API is the web services portion of MusicKit. Using the Apple Music API, you can access information about media—such as albums, songs, artists, and playlists—in the Apple Music catalog and in a user’s personal cloud library. If authorized by a user, you can also access or modify data associated with that user. For example, you can find music recommendations for the user or change their rating of a particular song, both in the catalog and in their library.
 
@@ -223,7 +226,9 @@ GET https://api.music.apple.com/v1/storefronts?offset=2&limit=2
 
 Continue requesting the resource objects until the next member no longer appears in the response.
 
-## Get a storefront
+# The Main API
+
+## 1. Get a storefront
 
 > Fetch a single storefront using its identifier.
 
