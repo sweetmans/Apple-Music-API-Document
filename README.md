@@ -137,7 +137,7 @@ The value of the query parameter must be a supported localization (included in t
 Handling Relationships and Pagination
 > You can fetch the resources and related objects your app needs in a single request. To get related objects, you fetch specific relationships along with the resource objects. If the query results contain too many objects, you can use pagination to fetch the next set of objects.
 
-#####Fetch Resource Relationships
+##### Fetch Resource Relationships
 To reduce response sizes and improve performance, not all available relationships of a resource object—such as an album, song, playlist, or music video—are included by default. You can include additional related resources in the response by using the include query parameter.
 
 There are three possible default behaviors for fetching resources in relationships:
@@ -222,3 +222,51 @@ GET https://api.music.apple.com/v1/storefronts?offset=2&limit=2
 ```
 
 Continue requesting the resource objects until the next member no longer appears in the response.
+
+## Get a storefront
+
+> Fetch a single storefront using its identifier.
+
+### URL
+```javascript
+GET https://api.music.apple.com/v1/storefronts/{id}
+```
+### Path Parameters
+
+- [x] **id**: `String` (Required) The identifier (an ISO 3166 alpha-2 country code) for the 
+
+### Query Parameters
+- [x] **l**: `string` (Optional) The localization to use, specified by a language tag. Any supported language tag may be used here, if one is not specified then en-US is used.
+
+### Response Codes
+- [x] `200` StorefrontResponseOK
+The request was successful.
+
+Content-Type: application/json
+Discussion
+Example
+Request
+### Response
+```javascript
+https://api.music.apple.com/v1/storefronts/jp
+```
+
+```json
+{
+    "data": [
+        {
+            "attributes": {
+                "defaultLanguageTag": "ja",
+                "name": "Japan",
+                "supportedLanguageTags": [
+                    "ja",
+                    "en-US"
+                ]
+            },
+            "href": "/v1/storefronts/jp",
+            "id": "jp",
+            "type": "storefronts"
+        }
+    ]
+}
+```
