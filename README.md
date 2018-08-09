@@ -7,7 +7,28 @@
 > From https://developer.apple.com
 
 ### API Lists
-- [ ] [**Get a store front**](https://github.com/sweetmans/Apple-Music-API-Document#1-get-a-storefront)
+
+##### Fetch Storefronts
+- [ ] [**Get a store front**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get multiple storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get all storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get a user's storefront**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+
+##### Fetch Resources
+- [ ] [**Catalog Resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Library Resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+
+##### Fetch Charts
+- [ ] [**Get catalog charts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+
+##### Fetch Genres
+- [ ] [**Get a catalog genre**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get multiple catalog genres**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get catalog top charts genres**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+
+##### Search the Catalog
+- [ ] [**Search for catalog resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get catalog search hints**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 
 ### Overview
 The Apple Music API is the web services portion of MusicKit. Using the Apple Music API, you can access information about media—such as albums, songs, artists, and playlists—in the Apple Music catalog and in a user’s personal cloud library. If authorized by a user, you can also access or modify data associated with that user. For example, you can find music recommendations for the user or change their rating of a particular song, both in the catalog and in their library.
@@ -228,7 +249,7 @@ Continue requesting the resource objects until the next member no longer appears
 
 # The Main API
 
-## 1. Get a storefront
+## Get a storefront
 
 > Fetch a single storefront using its identifier.
 
