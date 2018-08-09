@@ -1,5 +1,7 @@
 ## Apple Music API Document
 
+> If you want to help more people to see this document. Just give me the start.
+
 > A web services API that lets you integrate streaming music with Apple Music content.
 
 > From https://developer.apple.com
@@ -20,6 +22,8 @@ The Apple Music API balances usefulness with processing time and bandwidth usage
 #### Before you do anything you should have developer token & user token.
 
 ##### Generate Developer jwt token see:
+[Creating Token From Apple!] (https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens)
+
 https://github.com/pelauimagineering/apple-music-token-generator
 
 ##### Request a user token within your app just use:
