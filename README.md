@@ -239,6 +239,11 @@ GET https://api.music.apple.com/v1/storefronts/{id}
 - [x] **l**: `string` (Optional) The localization to use, specified by a language tag. Any supported language tag may be used here, if one is not specified then en-US is used.
 
 ### Response Codes
+code:`200` | **OK**
+------------ | -------------
+Storefront | The request was successful.
+Response Type | Content-Type: application/json
+
 - [x] `200` StorefrontResponseOK
 The request was successful.
 
