@@ -312,3 +312,101 @@ GET https://api.music.apple.com/v1/storefronts/jp
     ]
 }
 ```
+
+## Get multiple storefronts
+
+> Fetch multiple storefronts.
+
+### URL
+```javascript
+GET https://api.music.apple.com/v1/storefronts
+```
+### Path Parameters
+
+- [x] **id**: `String` (Required) The identifier (an ISO 3166 alpha-2 country code) for the 
+
+### Query Parameters
+- [x] **l**: `string` (Optional) The localization to use, specified by a language tag. Any supported language tag may be used here, if one is not specified then en-US is used.
+
+### Response Codes
+code:`200` | **OK**
+------------ | -------------
+Object | `Storefront`
+Response Type | `Content-Type: application/json`
+
+### Response
+```javascript
+GET https://api.music.apple.com/v1/storefronts?ids=us,ca,cn,au,hk
+```
+
+```json
+{
+    "data": [
+        {
+            "attributes": {
+                "defaultLanguageTag": "en-US",
+                "name": "United States",
+                "supportedLanguageTags": [
+                    "en-US",
+                    "es-MX"
+                ]
+            },
+            "href": "/v1/storefronts/us",
+            "id": "us",
+            "type": "storefronts"
+        },
+        {
+            "attributes": {
+                "defaultLanguageTag": "en-CA",
+                "name": "Canada",
+                "supportedLanguageTags": [
+                    "en-CA",
+                    "fr-CA"
+                ]
+            },
+            "href": "/v1/storefronts/ca",
+            "id": "ca",
+            "type": "storefronts"
+        },
+        {
+            "attributes": {
+                "defaultLanguageTag": "zh-Hans-CN",
+                "name": "China",
+                "supportedLanguageTags": [
+                    "zh-Hans-CN",
+                    "en-GB"
+                ]
+            },
+            "href": "/v1/storefronts/cn",
+            "id": "cn",
+            "type": "storefronts"
+        },
+        {
+            "attributes": {
+                "defaultLanguageTag": "en-AU",
+                "name": "Australia",
+                "supportedLanguageTags": [
+                    "en-AU"
+                ]
+            },
+            "href": "/v1/storefronts/au",
+            "id": "au",
+            "type": "storefronts"
+        },
+        {
+            "attributes": {
+                "defaultLanguageTag": "zh-Hant-HK",
+                "name": "Hong Kong",
+                "supportedLanguageTags": [
+                    "zh-Hant-HK",
+                    "zh-Hant-TW",
+                    "en-GB"
+                ]
+            },
+            "href": "/v1/storefronts/hk",
+            "id": "hk",
+            "type": "storefronts"
+        }
+    ]
+}
+```
