@@ -10,7 +10,7 @@
 
 #### Fetch Storefronts
 - [ ] [**Get a store front**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get multiple storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get multiple storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-multiple-storefronts)
 - [ ] [**Get all storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get a user's storefront**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 #### Fetch Resources
@@ -323,7 +323,7 @@ GET https://api.music.apple.com/v1/storefronts
 ```
 ### Path Parameters
 
-- [x] **id**: `String` (Required) The identifier (an ISO 3166 alpha-2 country code) for the 
+- [x] **ids**: `String` (Required) A list of the identifiers (ISO 3166 alpha-2 country codes) for the storefronts you want to fetch. 
 
 ### Query Parameters
 - [x] **l**: `string` (Optional) The localization to use, specified by a language tag. Any supported language tag may be used here, if one is not specified then en-US is used.
