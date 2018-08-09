@@ -242,15 +242,8 @@ GET https://api.music.apple.com/v1/storefronts/{id}
 code:`200` | **OK**
 ------------ | -------------
 Storefront | The request was successful.
-Response Type | Content-Type: application/json
+Response Type | ```Content-Type: application/json```
 
-- [x] `200` StorefrontResponseOK
-The request was successful.
-
-Content-Type: application/json
-Discussion
-Example
-Request
 ### Response
 ```javascript
 https://api.music.apple.com/v1/storefronts/jp
