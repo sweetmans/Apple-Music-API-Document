@@ -6,7 +6,7 @@
 
 > From https://developer.apple.com
 
-### API Lists
+### The Main APIs
 
 #### Fetch Storefronts
 - [ ] [**Get a store front**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
@@ -25,7 +25,28 @@
 #### Search the Catalog
 - [ ] [**Search for catalog resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 - [ ] [**Get catalog search hints**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-
+#### Search the Library
+- [ ] [**Search for library resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### Fetch Recent History
+- [ ] [**Get heavy rotation content**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get recently played**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get recent stations**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get recently added**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### Modify Library and Library Playlists
+- [ ] [**Add a resource to a library**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Create a new library playlist**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Add tracks to library playlist**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### Manage Ratings
+- [ ] [**Catalog Ratings**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Library Ratings**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### Fetch Recommendations
+- [ ] [**Get a recommendation**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get multiple recommendations**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+- [ ] [**Get default recommendations**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### Object Models
+- [ ] [**Apple Music API Objects**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### Endpoints
+- [ ] [**Get a catalog genre's relationship directly by name**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
 
 # Apple Music API Overview
 The Apple Music API is the web services portion of MusicKit. Using the Apple Music API, you can access information about media—such as albums, songs, artists, and playlists—in the Apple Music catalog and in a user’s personal cloud library. If authorized by a user, you can also access or modify data associated with that user. For example, you can find music recommendations for the user or change their rating of a particular song, both in the catalog and in their library.
