@@ -1,6 +1,6 @@
 ## Apple Music API Document
 
-> If you want to help more people to see this document. Just give me the start.
+> Giving me stars to help more people see this document.
 
 > A web services API that lets you integrate streaming music with Apple Music content.
 
