@@ -55,11 +55,11 @@ Requests to the Apple Music API are sent securely using HTTPS commands. All requ
 
 Responses are provided as JSON objects. Apple Music provides a rich object model with many predefined resource types. For example, the Album resource type specifies the data associated with an album. Resources in the Apple Music object model are often related to each other. For example, an album has artists, genres, and tracks, all of which are represented by other object types. See Handling Requests and Responses.
 
-Apple Music is a worldwide service that operates in many countries and languages. However, the available content varies by region. In Apple Music, a region is called a storefront, and each storefront vends a different music catalog. In most cases, a request URL includes a storefront code that specifies which storefront the request should be routed to. For example, when you search for an album, the request specifies a storefront, and the response tells you whether that album is available in that storefront. Choose an appropriate storefront for the user’s location. For example, in an iOS app, you can call StoreKit to find out which storefront the user is logged in to on that device.
+Apple Music is a worldwide service that operates in many countries and languages. However, the available content varies by a region. In Apple Music, a region is called a storefront, and each storefront vends a different music catalog. In most cases, a request URL includes a storefront code that specifies which storefront the request should be routed to. For example, when you search for an album, the request specifies a storefront, and the response tells you whether that album is available in that storefront. Choose an appropriate storefront for the user’s location. For example, in an iOS app, you can call StoreKit to find out which storefront the user is logged in to on that device.
 
 With localization, responses are automatically localized in an appropriate language for the storefront you select. Each storefront has a default language, but a storefront can support multiple languages. For example, the United States storefront supports both American English and Mexican Spanish. When you create a request, you can optionally specify that the response should be returned in one of the other languages instead. See Using Storefronts and Localizations.
 
-The Apple Music API balances usefulness with processing time and bandwidth usage. By default, it might not provide all of the information in a single response. For example, when returning a resource that has relationships with other resources, some or all of the information about those relationships might be omitted. Similarly, if a request results in a large number of objects, Apple Music might return a subset of those objects in the initial response and ask you to make subsequent requests to get the rest of the data. If your app has specific needs, you can modify your request so that more information is returned in a single response. See Handling Relationships and Pagination.
+The Apple Music API balances usefulness with processing time and bandwidth usage. By default, it might not provide all the information in a single response. For example, when returning a resource that has relationships with other resources, some or all of the information about those relationships might be omitted. Similarly, if a request results in a large number of objects, Apple Music might return a subset of those objects in the initial response and ask you to make subsequent requests to get the rest of the data. If your app has specific needs, you can modify your request so that more information is returned in a single response. See Handling Relationships and Pagination.
 
 ## Before you do anything you should have developer token & user token.
 
@@ -116,15 +116,15 @@ If the request is for an existing single resource object, the status code is 200
 
 If the request is for a single resource object that doesn’t exist, the status code is 404 (Not Found) and the response doesn’t contain a data array.
 
-If the request is for multiple resource objects by ID, the status code is 200 (OK) and the data array includes the existing resource objects.
+If the request is for multiple resource objects by ID, the status code is 200 (OK), and the data array includes the existing resource objects.
 
-If the request is for multiple resource objects by ID and none of the resources exist, the status code is 200 (OK) and the data array is empty.
+If the request is for multiple resource objects by ID and none of the resources exist, the status code is 200 (OK), and the data array is empty.
 
-If you make a successful request to an endpoint that returns results, the status code is 200 (OK) and the response includes the results object.
+If you make a successful request to an endpoint that returns results, the status code is 200 (OK), and the response includes the results object.
 
-If the request isn’t supported as specified, the status code is 400 (Bad Request) and the errors array contains an error object for any identified problem.
+If the request isn’t supported as specified, the status code is 400 (Bad Request), and the errors array contains an error object for any identified problem.
 
-If errors are encountered when the request is processed, the status code is in the 500 range and the errors array contains error objects for the errors that occurred.
+If errors are encountered when the request is processed, the status code is in the 500 range, and the errors array contains error objects for the errors that occurred.
 
 ## Using Storefronts and Localizations
 > In Apple Music catalog requests, you specify the storefront in the path, and you can optionally specify a localization. A storefront is a country-specific geographical region. A localization is the translation of content into a language that also adapts to a region and culture. Each storefront supports a specific set of localizations.
@@ -157,7 +157,7 @@ If you don't explicitly specify a localization for a storefront, or if the local
 GET https://api.music.apple.com/v1/catalog/us/albums/310730204?l=es-MX
 ```
 
-The value of the query parameter must be a supported localization (included in the supportedLanguageTags array). It’s unnecessary and not recommended to pass the storefront’s default localization, specified by the defaultLanguageTag attribute. For example, the United States (US) storefront’s default localization is American English (en-US) and is used if no localization is specified. However, you can specify Mexican Spanish (es-MX) as the localization.
+The value of the query parameter must be a supported localization (included in the supportedLanguageTags array). It’s unnecessary and not recommended passing the storefront’s default localization, specified by the defaultLanguageTag attribute. For example, the United States (US) storefront’s default localization is American English (en-US) and is used if no localization is specified. However, you can specify Mexican Spanish (es-MX) as the localization.
 ```json
 {
     "attributes":{
@@ -221,7 +221,7 @@ Some GET requests support pagination of the objects or an object’s relationshi
 See the corresponding resource’s object model for the default fetch limit. If there are more resource objects than permitted by the fetch limit, the ResponseRoot object contains a next member whose value is a subpath you use in the next request. The subpath contains the offset parameter that specifies the next page. Similarly, a Relationship object may contain a next member that you use to fetch more objects in a relationship.
 
 For example, fetch all objects of a resource type, but specify the amount in the response by using the limit parameter:
-```javascript
+```
 GET https://api.music.apple.com/v1/storefronts?limit=2
 ```
 
