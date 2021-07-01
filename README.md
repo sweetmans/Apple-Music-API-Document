@@ -1,52 +1,14 @@
-## Apple Music API Document
+### Giving me stars ⭐️⭐️⭐️⭐️⭐️ to help more people see this document. 
 
-> Giving me stars to help more people see this document.
+## Apple Music API Document & Framework (In progress)
+#### A web services API that lets you integrate streaming music with Apple Music content.
 
-> A web services API that lets you integrate streaming music with Apple Music content.
-
-> From https://developer.apple.com
-
-### The Main APIs
-
-#### Fetch Storefronts
-- [ ] [**Get a store front**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get multiple storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-multiple-storefronts)
-- [ ] [**Get all storefronts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get a user's storefront**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Fetch Resources
-- [ ] [**Catalog Resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Library Resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Fetch Charts
-- [ ] [**Get catalog charts**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Fetch Genres
-- [ ] [**Get a catalog genre**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get multiple catalog genres**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get catalog top charts genres**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Search the Catalog
-- [ ] [**Search for catalog resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get catalog search hints**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Search the Library
-- [ ] [**Search for library resources**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Fetch Recent History
-- [ ] [**Get heavy rotation content**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get recently played**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get recent stations**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get recently added**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Modify Library and Library Playlists
-- [ ] [**Add a resource to a library**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Create a new library playlist**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Add tracks to library playlist**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Manage Ratings
-- [ ] [**Catalog Ratings**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Library Ratings**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Fetch Recommendations
-- [ ] [**Get a recommendation**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get multiple recommendations**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-- [ ] [**Get default recommendations**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Object Models
-- [ ] [**Apple Music API Objects**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
-#### Endpoints
-- [ ] [**Get a catalog genre's relationship directly by name**](https://github.com/sweetmans/Apple-Music-API-Document#get-a-storefront)
+#### I am coding an API for yuur guys easy to access Apple Music API. Using the [iJSON model generator](https://apps.apple.com/us/app/ijson-model-generator/id1486894478). If you want to speed up your coding. And don't waste your time on naming `class`. You could try this app.
+[Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478). Just $0.99
+<p align="center" >
+	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/appstore-preview-3.png" title="SMInstagramPhotoPicker" float=left>
+	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/appstore-preview.png" title="SMInstagramPhotoPicker" float=left>
+</p>
 
 # Apple Music API Overview
 The Apple Music API is the web services portion of MusicKit. Using the Apple Music API, you can access information about media—such as albums, songs, artists, and playlists—in the Apple Music catalog and in a user’s personal cloud library. If authorized by a user, you can also access or modify data associated with that user. For example, you can find music recommendations for the user or change their rating of a particular song, both in the catalog and in their library.
@@ -63,21 +25,41 @@ The Apple Music API balances usefulness with processing time and bandwidth usage
 
 ## Before you do anything you should have developer token & user token.
 
-### Generate Developer JWT see:
+## Generate Developer JWT see:
 [Creating Token From Apple](https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens)
 
 [Developer Token Generator](https://github.com/pelauimagineering/apple-music-token-generator)
 
 
-### Request a user token within your app just use:
+## Request a user token within your app just use:
 
-
+### Request access user's media libarry
+Add to your app's `Plist.info`
+```xml
+<key>NSAppleMusicUsageDescription</key>
+<string>Use your music</string>
+```
+And then
 ```swift
-//Import Store Kit
 import StoreKit
 
-//At DispatchQueue.main call
-requestUserToken(forDeveloperToken:completionHandler:)
+SKCloudServiceController.requestAuthorization { [weak self] status in
+    print(status)
+    if status == .authorized {
+        guard let self = self else { return }
+        self.requestMusicToken()
+    }
+}
+```
+###  Request a user token
+```swift
+import StoreKit
+
+private func requestUserMusicToken() {
+    SKCloudServiceController().requestUserToken(forDeveloperToken: "#Your developer token#") { token, error in
+        print("USER TOKEN", token, error)
+    }
+}
 ```
 
 ## Handling Requests and Responses
@@ -113,18 +95,12 @@ If the status code indicates an error, the response may contain information in t
 ### For example:
 
 If the request is for an existing single resource object, the status code is 200 (OK) and the data array contains the requested resource object.
-
 If the request is for a single resource object that doesn’t exist, the status code is 404 (Not Found) and the response doesn’t contain a data array.
-
-If the request is for multiple resource objects by ID, the status code is 200 (OK), and the data array includes the existing resource objects.
-
-If the request is for multiple resource objects by ID and none of the resources exist, the status code is 200 (OK), and the data array is empty.
-
-If you make a successful request to an endpoint that returns results, the status code is 200 (OK), and the response includes the results object.
-
-If the request isn’t supported as specified, the status code is 400 (Bad Request), and the errors array contains an error object for any identified problem.
-
-If errors are encountered when the request is processed, the status code is in the 500 range, and the errors array contains error objects for the errors that occurred.
+If the request is for multiple resource objects by ID, the status code is 200 (OK) and the data array includes the existing resource objects.
+If the request is for multiple resource objects by ID and none of the resources exist, the status code is 200 (OK) and the data array is empty.
+If you make a successful request to an endpoint that returns results, the status code is 200 (OK) and the response includes the results object.
+If the request isn’t supported as specified, the status code is 400 (Bad Request) and the errors array contains an error object for any identified problem.
+If errors are encountered when the request is processed, the status code is in the 500 range and the errors array contains error objects for the errors that occurred.
 
 ## Using Storefronts and Localizations
 > In Apple Music catalog requests, you specify the storefront in the path, and you can optionally specify a localization. A storefront is a country-specific geographical region. A localization is the translation of content into a language that also adapts to a region and culture. Each storefront supports a specific set of localizations.
@@ -183,23 +159,14 @@ Handling Relationships and Pagination
 To reduce response sizes and improve performance, not all available relationships of a resource object—such as an album, song, playlist, or music video—are included by default. You can include additional related resources in the response by using the include query parameter.
 
 There are three possible default behaviors for fetching resources in relationships:
-
 The resources are included, with their attributes, as secondary resource objects.
-
 The resources are included, without their attributes, as resource identifiers only.
-
 The relationship is omitted from the response entirely and must be explicitly included.
-
 > For example, these Album relationships have different default behaviors:
-
 The tracks relationship includes the resource objects for the album’s songs and music videos, which are typically essential for working with albums.
-
 The artists relationship only includes resource identifiers for the artist or artists associated with the album and excludes the attributes member in each resource object. This relationship allows you to easily link to an artist from an album, although some artist attributes are also attributes of the album.
-
 The genres relationship is omitted by default. This relationship is seldom used, and the names of the genres already appear as an attribute of the album, genreNames.
-
 See the corresponding object model reference for the default behavior of other objects.
-
 Use the include parameter to include the resource objects for one or more available relationships in the response. The value of the include parameter is a comma-separated list of the relationship names. Relationships that include resource objects by default don’t have to be specified in the list; they’ll continue to be included along with the specified relationships. For example, when fetching an Artist object, you can request that the playlists objects be included:
 ```javascript
 GET https://api.music.apple.com/v1/catalog/us/artists/462006?include=playlists
