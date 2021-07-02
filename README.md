@@ -3,7 +3,7 @@
 ## Apple Music API Document & Framework (In progress)
 #### A web services API that lets you integrate streaming music with Apple Music content.
 
-#### I am coding an API for yuur guys easy to access Apple Music API. Using the [iJSON model generator](https://apps.apple.com/us/app/ijson-model-generator/id1486894478). If you want to speed up your coding. And don't waste your time on naming `class`. You could try this app.
+#### I am coding an API for your guys easy to access Apple Music API. Using the [iJSON model generator](https://apps.apple.com/us/app/ijson-model-generator/id1486894478). If you want to speed up your coding. And don't waste your time on naming `class`. You could try this app.
 [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478). Just $0.99
 <p align="center" >
 	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/appstore-preview-3.png" title="SMInstagramPhotoPicker" float=left>
