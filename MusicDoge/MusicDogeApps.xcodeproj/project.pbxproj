@@ -107,9 +107,8 @@
 		A11BA59F2691DFE3003DD368 /* MusicDoge */ = {
 			isa = PBXGroup;
 			children = (
+				A11BA5C12691F1F1003DD368 /* Classes */,
 				A11BA5A02691DFE3003DD368 /* MusicDoge.h */,
-				A11BA5B92691E0DE003DD368 /* MDMusciProvider.swift */,
-				A11BA5BF2691E28D003DD368 /* MDStoreFront.swift */,
 			);
 			path = MusicDoge;
 			sourceTree = "<group>";
@@ -120,6 +119,15 @@
 				A11BA5AC2691DFE3003DD368 /* MusicDogeTests.swift */,
 			);
 			path = MusicDogeTests;
+			sourceTree = "<group>";
+		};
+		A11BA5C12691F1F1003DD368 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A11BA5B92691E0DE003DD368 /* MDMusciProvider.swift */,
+				A11BA5BF2691E28D003DD368 /* MDStoreFront.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		A1B1E0A42691CFB300ABFB2C = {

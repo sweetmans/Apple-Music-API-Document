@@ -1,5 +1,5 @@
-.idea/**
-.build/**
-.swiftpm/**
+.idea/
+.build/
+.swiftpm/
 
 *.xcuserstate
