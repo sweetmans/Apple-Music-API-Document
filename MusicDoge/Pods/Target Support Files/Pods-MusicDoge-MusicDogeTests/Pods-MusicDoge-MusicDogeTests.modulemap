@@ -1,0 +1,6 @@
+framework module Pods_MusicDoge_MusicDogeTests {
+  umbrella header "Pods-MusicDoge-MusicDogeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

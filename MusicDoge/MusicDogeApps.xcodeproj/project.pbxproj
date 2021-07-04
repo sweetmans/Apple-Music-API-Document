@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D8E6D973E1E1ED3392918FC /* Pods_MusicDoge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D1A3578F505F611BF98794 /* Pods_MusicDoge.framework */; };
+		730EC8F1228D29F22E302B9E /* Pods_MusicDogeApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E5BC09BEF2B3CFD6360DC5 /* Pods_MusicDogeApps.framework */; };
 		A11BA5A62691DFE3003DD368 /* MusicDoge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11BA59E2691DFE3003DD368 /* MusicDoge.framework */; };
 		A11BA5AD2691DFE3003DD368 /* MusicDogeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BA5AC2691DFE3003DD368 /* MusicDogeTests.swift */; };
 		A11BA5AE2691DFE3003DD368 /* MusicDoge.h in Headers */ = {isa = PBXBuildFile; fileRef = A11BA5A02691DFE3003DD368 /* MusicDoge.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +22,7 @@
 		A1B1E0B82691CFB300ABFB2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B1E0B62691CFB300ABFB2C /* Main.storyboard */; };
 		A1B1E0BA2691CFB300ABFB2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B1E0B92691CFB300ABFB2C /* Assets.xcassets */; };
 		A1B1E0BD2691CFB300ABFB2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B1E0BB2691CFB300ABFB2C /* LaunchScreen.storyboard */; };
+		A72006DE3DB0CD4B9E8651F8 /* Pods_MusicDoge_MusicDogeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765D6CD16CE2547D46A63B16 /* Pods_MusicDoge_MusicDogeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2088138359ED966AFFD61C37 /* Pods-MusicDogeApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDogeApps.debug.xcconfig"; path = "Target Support Files/Pods-MusicDogeApps/Pods-MusicDogeApps.debug.xcconfig"; sourceTree = "<group>"; };
+		2E3C5BF330B0710D94572EEB /* Pods-MusicDoge-MusicDogeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDoge-MusicDogeTests.release.xcconfig"; path = "Target Support Files/Pods-MusicDoge-MusicDogeTests/Pods-MusicDoge-MusicDogeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E4302727AE816C2925C0955 /* Pods-MusicDogeApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDogeApps.release.xcconfig"; path = "Target Support Files/Pods-MusicDogeApps/Pods-MusicDogeApps.release.xcconfig"; sourceTree = "<group>"; };
+		521802C78880598B77E97F66 /* Pods-MusicDoge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDoge.release.xcconfig"; path = "Target Support Files/Pods-MusicDoge/Pods-MusicDoge.release.xcconfig"; sourceTree = "<group>"; };
+		69D1A3578F505F611BF98794 /* Pods_MusicDoge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDoge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F0446B02EBD17C27B0D3EE7 /* Pods-MusicDoge-MusicDogeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDoge-MusicDogeTests.debug.xcconfig"; path = "Target Support Files/Pods-MusicDoge-MusicDogeTests/Pods-MusicDoge-MusicDogeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		765D6CD16CE2547D46A63B16 /* Pods_MusicDoge_MusicDogeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDoge_MusicDogeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B6B71B620503ECC5DA99F4 /* Pods-MusicDoge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDoge.debug.xcconfig"; path = "Target Support Files/Pods-MusicDoge/Pods-MusicDoge.debug.xcconfig"; sourceTree = "<group>"; };
 		A11BA59E2691DFE3003DD368 /* MusicDoge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MusicDoge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11BA5A02691DFE3003DD368 /* MusicDoge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicDoge.h; sourceTree = "<group>"; };
 		A11BA5A52691DFE3003DD368 /* MusicDogeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicDogeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +86,7 @@
 		A1B1E0B92691CFB300ABFB2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B1E0BC2691CFB300ABFB2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B1E0BE2691CFB300ABFB2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9E5BC09BEF2B3CFD6360DC5 /* Pods_MusicDogeApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDogeApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8E6D973E1E1ED3392918FC /* Pods_MusicDoge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11BA5A62691DFE3003DD368 /* MusicDoge.framework in Frameworks */,
+				A72006DE3DB0CD4B9E8651F8 /* Pods_MusicDoge_MusicDogeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +112,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11BA5B12691DFE3003DD368 /* MusicDoge.framework in Frameworks */,
+				730EC8F1228D29F22E302B9E /* Pods_MusicDogeApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FE4EE60B28E62DD2E13AE90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84B6B71B620503ECC5DA99F4 /* Pods-MusicDoge.debug.xcconfig */,
+				521802C78880598B77E97F66 /* Pods-MusicDoge.release.xcconfig */,
+				6F0446B02EBD17C27B0D3EE7 /* Pods-MusicDoge-MusicDogeTests.debug.xcconfig */,
+				2E3C5BF330B0710D94572EEB /* Pods-MusicDoge-MusicDogeTests.release.xcconfig */,
+				2088138359ED966AFFD61C37 /* Pods-MusicDogeApps.debug.xcconfig */,
+				4E4302727AE816C2925C0955 /* Pods-MusicDogeApps.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A11BA59F2691DFE3003DD368 /* MusicDoge */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +165,8 @@
 				A11BA59F2691DFE3003DD368 /* MusicDoge */,
 				A11BA5AB2691DFE3003DD368 /* MusicDogeTests */,
 				A1B1E0AE2691CFB300ABFB2C /* Products */,
+				0FE4EE60B28E62DD2E13AE90 /* Pods */,
+				BD1CCFA5C008F828131B5F1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +194,16 @@
 			path = MusicDogeApps;
 			sourceTree = "<group>";
 		};
+		BD1CCFA5C008F828131B5F1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69D1A3578F505F611BF98794 /* Pods_MusicDoge.framework */,
+				765D6CD16CE2547D46A63B16 /* Pods_MusicDoge_MusicDogeTests.framework */,
+				F9E5BC09BEF2B3CFD6360DC5 /* Pods_MusicDogeApps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -182,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A11BA5B32691DFE3003DD368 /* Build configuration list for PBXNativeTarget "MusicDoge" */;
 			buildPhases = (
+				ADD9C697C4807F2F2EBE14E3 /* [CP] Check Pods Manifest.lock */,
 				A11BA5992691DFE3003DD368 /* Headers */,
 				A11BA59A2691DFE3003DD368 /* Sources */,
 				A11BA59B2691DFE3003DD368 /* Frameworks */,
@@ -200,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A11BA5B62691DFE3003DD368 /* Build configuration list for PBXNativeTarget "MusicDogeTests" */;
 			buildPhases = (
+				D226E7D5958390D0B95DF24D /* [CP] Check Pods Manifest.lock */,
 				A11BA5A12691DFE3003DD368 /* Sources */,
 				A11BA5A22691DFE3003DD368 /* Frameworks */,
 				A11BA5A32691DFE3003DD368 /* Resources */,
+				6555DC6BDE2C16E545A63077 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,10 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1B1E0C12691CFB300ABFB2C /* Build configuration list for PBXNativeTarget "MusicDogeApps" */;
 			buildPhases = (
+				6B6C53E4CAF0312F5B80C6C5 /* [CP] Check Pods Manifest.lock */,
 				A1B1E0A92691CFB300ABFB2C /* Sources */,
 				A1B1E0AA2691CFB300ABFB2C /* Frameworks */,
 				A1B1E0AB2691CFB300ABFB2C /* Resources */,
 				A1B1E0E32691D3AA00ABFB2C /* Embed Frameworks */,
+				45779E1C2C25A39EF14D0C15 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +348,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45779E1C2C25A39EF14D0C15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDogeApps/Pods-MusicDogeApps-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDogeApps/Pods-MusicDogeApps-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicDogeApps/Pods-MusicDogeApps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6555DC6BDE2C16E545A63077 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDoge-MusicDogeTests/Pods-MusicDoge-MusicDogeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDoge-MusicDogeTests/Pods-MusicDoge-MusicDogeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicDoge-MusicDogeTests/Pods-MusicDoge-MusicDogeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B6C53E4CAF0312F5B80C6C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicDogeApps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADD9C697C4807F2F2EBE14E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicDoge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D226E7D5958390D0B95DF24D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicDoge-MusicDogeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A11BA59A2691DFE3003DD368 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,7 +521,9 @@
 /* Begin XCBuildConfiguration section */
 		A11BA5B42691DFE3003DD368 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B6B71B620503ECC5DA99F4 /* Pods-MusicDoge.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -385,7 +535,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,7 +556,9 @@
 		};
 		A11BA5B52691DFE3003DD368 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521802C78880598B77E97F66 /* Pods-MusicDoge.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -418,7 +570,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,8 +590,9 @@
 		};
 		A11BA5B72691DFE3003DD368 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F0446B02EBD17C27B0D3EE7 /* Pods-MusicDoge-MusicDogeTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
@@ -462,8 +615,9 @@
 		};
 		A11BA5B82691DFE3003DD368 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E3C5BF330B0710D94572EEB /* Pods-MusicDoge-MusicDogeTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
@@ -602,13 +756,15 @@
 		};
 		A1B1E0C22691CFB300ABFB2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2088138359ED966AFFD61C37 /* Pods-MusicDogeApps.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				INFOPLIST_FILE = MusicDogeApps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,13 +779,15 @@
 		};
 		A1B1E0C32691CFB300ABFB2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4302727AE816C2925C0955 /* Pods-MusicDogeApps.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				INFOPLIST_FILE = MusicDogeApps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
